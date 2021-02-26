@@ -152,7 +152,7 @@ nav ul li a{
 
 nav .animation{
 	position: absolute;
-	height: 130%;
+	height: 140%;
 	/* height: 5px; */
 	top: 0;
 	/* bottom: 0; */
@@ -178,6 +178,8 @@ nav .animation{
 	align-content: center;
 	justify-content: center;
 	position: relative;
+	height: 50;
+	width: auto;
 }
 
 li:nth-child(1){
