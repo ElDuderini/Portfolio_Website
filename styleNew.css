@@ -118,6 +118,12 @@ header .overlay {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+    .vertCenter {
+        display: none;
+    }
+}
+
 .grow{
 	width: 70px;
 	height: 65px;
