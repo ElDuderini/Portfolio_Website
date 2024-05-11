@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/Build.json");
-    </script>
   </head>
   <body>
-     <div class="webgl-content">
+    <button id="btn" class="overlay-button" onclick="startUnity()" type="button"><h2>Click to start game</h2></button>
+    <div id="unity" class="webgl-content">
       <div id="unityContainer" style="width: 1280px; height: 720px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Eye of the storm</div>
-      </div>
     </div>
   </body>
 </html>
+<script>
+      const btn = document.getElementById('btn');
+      function startUnity(){
+        btn.style.visibility = 'hidden';
+        UnityLoader.instantiate("unityContainer", "Build/Build.json");
+      }
+</script>
