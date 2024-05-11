@@ -8,18 +8,26 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WedGL Build.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 1280px; height: 720px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Spooky Hoops</div>
+    </head>
+    <body>
+      <button id="btn" class="overlay-button" onclick="startUnity()" type="button"><h2>Click to start game</h2></button>
+      <div id="unity" class="webgl-content">
+        <div id="unityContainer" style="width: 1280px; height: 720px"></div>
       </div>
-    </div>
-  </body>
-</html>
+      <i id="fullScreenBtn" class="overlay-fullscreen" onclick="fullScreen()" style="visibility: hidden;"><img src="TemplateData/arrows-fullscreen.svg" height="32px" width="32px"/></i>
+    </body>
+  </html>
+  <script>
+        const btn = document.getElementById('btn');
+        const fullScreenBtn = document.getElementById('fullScreenBtn')
+        var unityInstance;
+        function startUnity(){
+          btn.style.visibility = 'hidden';
+          fullScreenBtn.style.visibility = "visible";
+         unityInstance = UnityLoader.instantiate("unityContainer", "Build/WedGL Build.json", {onProgress: UnityProgress});
+        }
+
+        function fullScreen(){
+          unityInstance.SetFullscreen(1)
+        }
+  </script>
