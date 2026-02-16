@@ -307,7 +307,10 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
   overflow: hidden;
 }
 
